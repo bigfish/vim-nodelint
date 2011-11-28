@@ -1,0 +1,42 @@
+## Vim Nodelint
+
+A vim compiler plugin to run [nodelint](https://github.com/tav/nodelint).
+
+### Installation 
+
+1. Install nodejs
+2. Install npm
+3. Install nodelint:
+
+    sudo npm install -g nodelint@0.5.2
+
+4. Put the nodelint.vim plugin from the compiler folder into your .vim/compiler folder (create it if it does not exist)
+5. Add the following to .vim/after/ftplugin/javascript:
+
+    compiler nodelint
+
+After you open a .js file, and save it, it will run nodelint on the file and report errors in the location window.
+It will jump to the location of the first error.
+
+### Options
+
+#### Config File
+
+The plugin will search for a file called 'nodelint-config.js' in the directories above the current
+file, and use the first one it finds.
+
+Otherwise it will use the default config file for nodelint -- see the nodelint-config.js included as
+an example. (The given example is configured for use in a browser environment, not Node.js, which is
+the default).
+
+If you set the g:NodelintConfig option, it will override any others and apply globally.
+eg.
+
+    let g:NodelintConfig = $HOME . '/nodelint-config.js'
+
+If you wish to not have the plugin auto-jump to errors, or open the window, set the following in
+your .vimrc:
+
+    let g:NodelintPassive = 1
+
+Then you can open the location window with :lope (and close with :lcl)
