@@ -18,6 +18,12 @@ A vim compiler plugin to run [nodelint](https://github.com/tav/nodelint).
 After you open a .js file, and save it, it will run nodelint on the file and report errors in the location window.
 It will jump to the location of the first error.
 
+_NB_: The environment variable `$NODE_PATH` must be set to the location(s) of your node modules. NPM does this automatically on the Mac,
+but does not do it on Linux, apparently. You can discover this by a command like 'locate nodelint'.
+It will be something like '/usr/local/lib/node_modules'. Set this in your .bashrc like so:
+
+  export NODE_PATH=/usr/local/lib/node_nodules
+
 ### Options
 
 #### Config File
