@@ -8,7 +8,7 @@ A vim compiler plugin to run [nodelint](https://github.com/tav/nodelint).
 2. Install npm
 3. Install nodelint:
 
-    sudo npm install -g nodelint@0.5.2
+    sudo npm install -g nodelint@0.6.0
 
 4. Put the nodelint.vim plugin from the compiler folder into your .vim/compiler folder (create it if it does not exist)
 5. Add the following to .vim/after/ftplugin/javascript:

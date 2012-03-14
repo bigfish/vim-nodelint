@@ -38,7 +38,7 @@ if executable('nodelint')
 	  while len(s:node_paths) && s:nodelint_reporter == ''
 		let s:node_path = remove(s:node_paths, 0)
         let s:nodelint_path = finddir('nodelint', s:node_path . "**")
-  	    let s:nodelint_reporter = findfile('syntastic-reporter.js', s:nodelint_path . "**" )
+  	    let s:nodelint_reporter = findfile('vim.js', s:nodelint_path . "**" )
   	    if s:nodelint_reporter
 		  "cache the value for next time
 	      let g:NodelintReporter = s:nodelint_reporter
